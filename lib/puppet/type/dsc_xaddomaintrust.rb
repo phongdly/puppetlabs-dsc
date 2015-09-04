@@ -59,6 +59,8 @@ Puppet::Type.newtype(:dsc_xaddomaintrust) do
   # IsMandatory:  False
   # Values:       ["Present", "Absent"]
   newparam(:dsc_ensure) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Should this resource be present or absent"
     validate do |value|
       resource[:ensure] = value.downcase
@@ -76,6 +78,8 @@ Puppet::Type.newtype(:dsc_xaddomaintrust) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_targetdomainadministratorcredential) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; true end
     desc "Credentials to authenticate to the target domain"
     validate do |value|
       unless value.kind_of?(String)
@@ -89,6 +93,8 @@ Puppet::Type.newtype(:dsc_xaddomaintrust) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_targetdomainname) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Name of the AD domain that is being trusted"
     isrequired
     validate do |value|
@@ -103,6 +109,8 @@ Puppet::Type.newtype(:dsc_xaddomaintrust) do
   # IsMandatory:  False
   # Values:       ["External", "Forest"]
   newparam(:dsc_trusttype) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Type of trust"
     validate do |value|
       unless value.kind_of?(String)
@@ -119,6 +127,8 @@ Puppet::Type.newtype(:dsc_xaddomaintrust) do
   # IsMandatory:  False
   # Values:       ["Bidirectional", "Inbound", "Outbound"]
   newparam(:dsc_trustdirection) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Direction of trust"
     validate do |value|
       unless value.kind_of?(String)
@@ -135,6 +145,8 @@ Puppet::Type.newtype(:dsc_xaddomaintrust) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_sourcedomainname) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Name of the AD domain that is requesting the trust"
     isrequired
     validate do |value|

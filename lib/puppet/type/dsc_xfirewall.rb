@@ -58,6 +58,8 @@ Puppet::Type.newtype(:dsc_xfirewall) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_name) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Name of the Firewall Rule"
     isrequired
     validate do |value|
@@ -72,6 +74,8 @@ Puppet::Type.newtype(:dsc_xfirewall) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_displayname) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Localized, user-facing name of the Firewall Rule being created"
     validate do |value|
       unless value.kind_of?(String)
@@ -85,6 +89,8 @@ Puppet::Type.newtype(:dsc_xfirewall) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_displaygroup) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Name of the Firewall Group where we want to put the Firewall Rules"
     validate do |value|
       unless value.kind_of?(String)
@@ -98,6 +104,8 @@ Puppet::Type.newtype(:dsc_xfirewall) do
   # IsMandatory:  False
   # Values:       ["Present", "Absent"]
   newparam(:dsc_ensure) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Ensure the presence/absence of the resource"
     validate do |value|
       resource[:ensure] = value.downcase
@@ -115,6 +123,8 @@ Puppet::Type.newtype(:dsc_xfirewall) do
   # IsMandatory:  False
   # Values:       ["NotConfigured", "Allow", "Block"]
   newparam(:dsc_access) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Permit or Block the supplied configuration"
     validate do |value|
       unless value.kind_of?(String)
@@ -131,6 +141,8 @@ Puppet::Type.newtype(:dsc_xfirewall) do
   # IsMandatory:  False
   # Values:       ["Enabled", "Disabled"]
   newparam(:dsc_state) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Enable or disable the supplied configuration"
     validate do |value|
       unless value.kind_of?(String)
@@ -147,6 +159,8 @@ Puppet::Type.newtype(:dsc_xfirewall) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_profile, :array_matching => :all) do
+    def mof_type; 'string[]' end
+    def mof_is_embedded?; false end
     desc "Specifies one or more profiles to which the rule is assigned"
     validate do |value|
       unless value.kind_of?(Array) || value.kind_of?(String)
@@ -163,6 +177,8 @@ Puppet::Type.newtype(:dsc_xfirewall) do
   # IsMandatory:  False
   # Values:       ["Inbound", "Outbound"]
   newparam(:dsc_direction) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Direction of the connection"
     validate do |value|
       unless value.kind_of?(String)
@@ -179,6 +195,8 @@ Puppet::Type.newtype(:dsc_xfirewall) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_remoteport, :array_matching => :all) do
+    def mof_type; 'string[]' end
+    def mof_is_embedded?; false end
     desc "Specific Port used for filter. Specified by port number, range, or keyword"
     validate do |value|
       unless value.kind_of?(Array) || value.kind_of?(String)
@@ -195,6 +213,8 @@ Puppet::Type.newtype(:dsc_xfirewall) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_localport, :array_matching => :all) do
+    def mof_type; 'string[]' end
+    def mof_is_embedded?; false end
     desc "Local Port used for the filter"
     validate do |value|
       unless value.kind_of?(Array) || value.kind_of?(String)
@@ -211,6 +231,8 @@ Puppet::Type.newtype(:dsc_xfirewall) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_protocol) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Specific Protocol for filter. Specified by name, number, or range"
     validate do |value|
       unless value.kind_of?(String)
@@ -224,6 +246,8 @@ Puppet::Type.newtype(:dsc_xfirewall) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_description) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Documentation for the Rule"
     validate do |value|
       unless value.kind_of?(String)
@@ -237,6 +261,8 @@ Puppet::Type.newtype(:dsc_xfirewall) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_applicationpath) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Path and file name of the program for which the rule is applied"
     validate do |value|
       unless value.kind_of?(String)
@@ -250,6 +276,8 @@ Puppet::Type.newtype(:dsc_xfirewall) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_service) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Specifies the short name of a Windows service to which the firewall rule applies"
     validate do |value|
       unless value.kind_of?(String)

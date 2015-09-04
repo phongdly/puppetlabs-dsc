@@ -57,6 +57,8 @@ Puppet::Type.newtype(:dsc_xadrecyclebin) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_forestfqdn) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     isrequired
     validate do |value|
       unless value.kind_of?(String)
@@ -70,6 +72,8 @@ Puppet::Type.newtype(:dsc_xadrecyclebin) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_enterpriseadministratorcredential) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; true end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -82,6 +86,8 @@ Puppet::Type.newtype(:dsc_xadrecyclebin) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_recyclebinenabled) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -94,6 +100,8 @@ Puppet::Type.newtype(:dsc_xadrecyclebin) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_forestmode) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")

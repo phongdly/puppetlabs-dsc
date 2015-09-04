@@ -57,6 +57,8 @@ Puppet::Type.newtype(:dsc_xwaitfordisk) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_disknumber) do
+    def mof_type; 'uint32' end
+    def mof_is_embedded?; false end
     isrequired
     validate do |value|
       unless (value.kind_of?(Numeric) && value >= 0) || (value.to_i.to_s == value && value.to_i >= 0)
@@ -73,6 +75,8 @@ Puppet::Type.newtype(:dsc_xwaitfordisk) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_retryintervalsec) do
+    def mof_type; 'uint64' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless (value.kind_of?(Numeric) && value >= 0) || (value.to_i.to_s == value && value.to_i >= 0)
           fail("Invalid value #{value}. Should be a unsigned Integer")
@@ -88,6 +92,8 @@ Puppet::Type.newtype(:dsc_xwaitfordisk) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_retrycount) do
+    def mof_type; 'uint32' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless (value.kind_of?(Numeric) && value >= 0) || (value.to_i.to_s == value && value.to_i >= 0)
           fail("Invalid value #{value}. Should be a unsigned Integer")

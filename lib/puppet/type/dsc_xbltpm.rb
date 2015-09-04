@@ -57,6 +57,8 @@ Puppet::Type.newtype(:dsc_xbltpm) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_identity) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     isrequired
     validate do |value|
       unless value.kind_of?(String)
@@ -70,6 +72,8 @@ Puppet::Type.newtype(:dsc_xbltpm) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_allowclear) do
+    def mof_type; 'boolean' end
+    def mof_is_embedded?; false end
     validate do |value|
     end
     newvalues(true, false)
@@ -83,6 +87,8 @@ Puppet::Type.newtype(:dsc_xbltpm) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_allowphysicalpresence) do
+    def mof_type; 'boolean' end
+    def mof_is_embedded?; false end
     validate do |value|
     end
     newvalues(true, false)
@@ -96,6 +102,8 @@ Puppet::Type.newtype(:dsc_xbltpm) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_allowimmediatereboot) do
+    def mof_type; 'boolean' end
+    def mof_is_embedded?; false end
     validate do |value|
     end
     newvalues(true, false)

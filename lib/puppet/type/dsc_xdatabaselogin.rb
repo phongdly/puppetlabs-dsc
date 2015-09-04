@@ -58,6 +58,8 @@ Puppet::Type.newtype(:dsc_xdatabaselogin) do
   # IsMandatory:  False
   # Values:       ["Present", "Absent"]
   newparam(:dsc_ensure) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       resource[:ensure] = value.downcase
       unless value.kind_of?(String)
@@ -74,6 +76,8 @@ Puppet::Type.newtype(:dsc_xdatabaselogin) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_loginname) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     isrequired
     validate do |value|
       unless value.kind_of?(String)
@@ -87,6 +91,8 @@ Puppet::Type.newtype(:dsc_xdatabaselogin) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_loginpassword) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -99,6 +105,8 @@ Puppet::Type.newtype(:dsc_xdatabaselogin) do
   # IsMandatory:  False
   # Values:       ["Windows", "SQL"]
   newparam(:dsc_sqlauthtype) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -114,6 +122,8 @@ Puppet::Type.newtype(:dsc_xdatabaselogin) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_sqlserver) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Sql Server Name"
     validate do |value|
       unless value.kind_of?(String)
@@ -127,6 +137,8 @@ Puppet::Type.newtype(:dsc_xdatabaselogin) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_sqlconnectioncredential) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; true end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")

@@ -58,6 +58,8 @@ Puppet::Type.newtype(:dsc_xpsendpoint) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_name) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Name of the PS Remoting Endpoint"
     isrequired
     validate do |value|
@@ -72,6 +74,8 @@ Puppet::Type.newtype(:dsc_xpsendpoint) do
   # IsMandatory:  False
   # Values:       ["Present", "Absent"]
   newparam(:dsc_ensure) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Whether to create the endpoint or delete it"
     validate do |value|
       resource[:ensure] = value.downcase
@@ -89,6 +93,8 @@ Puppet::Type.newtype(:dsc_xpsendpoint) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_startupscript) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Path for the startup script"
     validate do |value|
       unless value.kind_of?(String)
@@ -102,6 +108,8 @@ Puppet::Type.newtype(:dsc_xpsendpoint) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_runascredential) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; true end
     desc "Credential for Running under different user context"
     validate do |value|
       unless value.kind_of?(String)
@@ -115,6 +123,8 @@ Puppet::Type.newtype(:dsc_xpsendpoint) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_securitydescriptorsddl) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "SDDL for allowed users to connect to this endpoint"
     validate do |value|
       unless value.kind_of?(String)
@@ -128,6 +138,8 @@ Puppet::Type.newtype(:dsc_xpsendpoint) do
   # IsMandatory:  False
   # Values:       ["Local", "Remote", "Disabled"]
   newparam(:dsc_accessmode) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Whether the endpoint is remotely accessible or has local access only or no access"
     validate do |value|
       unless value.kind_of?(String)

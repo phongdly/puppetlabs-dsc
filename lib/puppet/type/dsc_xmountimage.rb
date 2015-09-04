@@ -58,6 +58,8 @@ Puppet::Type.newtype(:dsc_xmountimage) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_name) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "This setting provides a unique name for the configuration"
     isrequired
     validate do |value|
@@ -72,6 +74,8 @@ Puppet::Type.newtype(:dsc_xmountimage) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_imagepath) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Specifies the path of the VHD or ISO file"
     validate do |value|
       unless value.kind_of?(String)
@@ -85,6 +89,8 @@ Puppet::Type.newtype(:dsc_xmountimage) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_driveletter) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Specifies the drive letter after the ISO is mounted"
     validate do |value|
       unless value.kind_of?(String)
@@ -98,6 +104,8 @@ Puppet::Type.newtype(:dsc_xmountimage) do
   # IsMandatory:  False
   # Values:       ["Present", "Absent"]
   newparam(:dsc_ensure) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Determines whether the setting should be applied or removed"
     validate do |value|
       resource[:ensure] = value.downcase

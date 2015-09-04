@@ -58,6 +58,8 @@ Puppet::Type.newtype(:dsc_xremotefile) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_destinationpath) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Path under which downloaded or copied file should be accessible after operation."
     isrequired
     validate do |value|
@@ -72,6 +74,8 @@ Puppet::Type.newtype(:dsc_xremotefile) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_uri) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Uri of a file which should be copied or downloaded. This parameter supports HTTP and HTTPS values."
     validate do |value|
       unless value.kind_of?(String)
@@ -85,6 +89,8 @@ Puppet::Type.newtype(:dsc_xremotefile) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_useragent) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "User agent for the web request."
     validate do |value|
       unless value.kind_of?(String)
@@ -98,6 +104,8 @@ Puppet::Type.newtype(:dsc_xremotefile) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_headers, :array_matching => :all) do
+    def mof_type; 'string[]' end
+    def mof_is_embedded?; true end
     desc "Headers of the web request."
     validate do |value|
       unless value.kind_of?(Array) || value.kind_of?(String)
@@ -114,6 +122,8 @@ Puppet::Type.newtype(:dsc_xremotefile) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_credential) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; true end
     desc "Specifies a user account that has permission to send the request."
     validate do |value|
       unless value.kind_of?(String)
@@ -127,6 +137,8 @@ Puppet::Type.newtype(:dsc_xremotefile) do
   # IsMandatory:  False
   # Values:       ["Present", "Absent"]
   newparam(:dsc_ensure) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Says whether DestinationPath exists on the machine"
     validate do |value|
       resource[:ensure] = value.downcase

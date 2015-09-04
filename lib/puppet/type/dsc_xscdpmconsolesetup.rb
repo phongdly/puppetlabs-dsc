@@ -58,6 +58,8 @@ Puppet::Type.newtype(:dsc_xscdpmconsolesetup) do
   # IsMandatory:  True
   # Values:       ["Present", "Absent"]
   newparam(:dsc_ensure) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "An enumerated value that describes if the DPM console is expected to be installed on the machine.\nPresent {default}  \nAbsent   \n"
     isrequired
     validate do |value|
@@ -76,6 +78,8 @@ Puppet::Type.newtype(:dsc_xscdpmconsolesetup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_sourcepath) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "UNC path to the root of the source files for installation."
     validate do |value|
       unless value.kind_of?(String)
@@ -89,6 +93,8 @@ Puppet::Type.newtype(:dsc_xscdpmconsolesetup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_sourcefolder) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Folder within the source path containing the source files for installation."
     validate do |value|
       unless value.kind_of?(String)
@@ -102,6 +108,8 @@ Puppet::Type.newtype(:dsc_xscdpmconsolesetup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_setupcredential) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; true end
     desc "Credential to be used to perform the installation."
     validate do |value|
       unless value.kind_of?(String)

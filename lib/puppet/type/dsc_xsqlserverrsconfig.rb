@@ -57,6 +57,8 @@ Puppet::Type.newtype(:dsc_xsqlserverrsconfig) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_instancename) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Name of the SQL Server Reporting Services instance to be configured."
     isrequired
     validate do |value|
@@ -71,6 +73,8 @@ Puppet::Type.newtype(:dsc_xsqlserverrsconfig) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_rssqlserver) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Name of the SQL Server to host the Reporting Service database."
     validate do |value|
       unless value.kind_of?(String)
@@ -84,6 +88,8 @@ Puppet::Type.newtype(:dsc_xsqlserverrsconfig) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_rssqlinstancename) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Name of the SQL Server instance to host the Reporting Service database."
     validate do |value|
       unless value.kind_of?(String)
@@ -97,6 +103,8 @@ Puppet::Type.newtype(:dsc_xsqlserverrsconfig) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_sqladmincredential) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; true end
     desc "Credential to be used to perform the configuration."
     validate do |value|
       unless value.kind_of?(String)
@@ -110,6 +118,8 @@ Puppet::Type.newtype(:dsc_xsqlserverrsconfig) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_isinitialized) do
+    def mof_type; 'boolean' end
+    def mof_is_embedded?; false end
     desc "Is the Reporting Services instance initialized."
     validate do |value|
     end

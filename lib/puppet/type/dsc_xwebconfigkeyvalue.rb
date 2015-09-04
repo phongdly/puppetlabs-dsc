@@ -60,6 +60,8 @@ Puppet::Type.newtype(:dsc_xwebconfigkeyvalue) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_websitepath) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Path to website location(IIS or WebAdministration format)"
     isrequired
     validate do |value|
@@ -74,6 +76,8 @@ Puppet::Type.newtype(:dsc_xwebconfigkeyvalue) do
   # IsMandatory:  True
   # Values:       ["AppSettings"]
   newparam(:dsc_configsection) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Config Section to be update"
     isrequired
     validate do |value|
@@ -91,6 +95,8 @@ Puppet::Type.newtype(:dsc_xwebconfigkeyvalue) do
   # IsMandatory:  False
   # Values:       ["Present", "Absent"]
   newparam(:dsc_ensure) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       resource[:ensure] = value.downcase
       unless value.kind_of?(String)
@@ -107,6 +113,8 @@ Puppet::Type.newtype(:dsc_xwebconfigkeyvalue) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_key) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Key for AppSettings"
     isrequired
     validate do |value|
@@ -121,6 +129,8 @@ Puppet::Type.newtype(:dsc_xwebconfigkeyvalue) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_value) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Value for AppSettings"
     validate do |value|
       unless value.kind_of?(String)
@@ -134,6 +144,8 @@ Puppet::Type.newtype(:dsc_xwebconfigkeyvalue) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_isattribute) do
+    def mof_type; 'boolean' end
+    def mof_is_embedded?; false end
     desc "If the given key value pair is for attribute, default is element"
     validate do |value|
     end

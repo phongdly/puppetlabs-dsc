@@ -57,6 +57,8 @@ Puppet::Type.newtype(:dsc_xwebsitedefaults) do
   # IsMandatory:  True
   # Values:       ["Machine"]
   newparam(:dsc_applyto) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Dummy value because we need a key, always 'Machine'"
     isrequired
     validate do |value|
@@ -74,6 +76,8 @@ Puppet::Type.newtype(:dsc_xwebsitedefaults) do
   # IsMandatory:  False
   # Values:       ["W3C", "IIS", "NCSA", "Custom"]
   newparam(:dsc_logformat) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "sites/siteDefaults/logFile/logFormat"
     validate do |value|
       unless value.kind_of?(String)
@@ -90,6 +94,8 @@ Puppet::Type.newtype(:dsc_xwebsitedefaults) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_logdirectory) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "sites/siteDefaults/logFile/directory"
     validate do |value|
       unless value.kind_of?(String)
@@ -103,6 +109,8 @@ Puppet::Type.newtype(:dsc_xwebsitedefaults) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_tracelogdirectory) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "sites/siteDefaults/traceFailedRequestsLogging/directory"
     validate do |value|
       unless value.kind_of?(String)
@@ -116,6 +124,8 @@ Puppet::Type.newtype(:dsc_xwebsitedefaults) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_defaultapplicationpool) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "sites/applicationDefaults/applicationPool"
     validate do |value|
       unless value.kind_of?(String)
@@ -129,6 +139,8 @@ Puppet::Type.newtype(:dsc_xwebsitedefaults) do
   # IsMandatory:  False
   # Values:       ["true", "false"]
   newparam(:dsc_allowsubdirconfig) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "sites/virtualDirectoryDefaults/allowSubDirConfig"
     validate do |value|
       unless value.kind_of?(String)

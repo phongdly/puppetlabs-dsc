@@ -57,6 +57,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_name) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     isrequired
     validate do |value|
       unless value.kind_of?(String)
@@ -70,6 +72,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_credential) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; true end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -82,6 +86,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_autodagtotalnumberofservers) do
+    def mof_type; 'sint32' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(Numeric) || value.to_i.to_s == value || value.to_i >= 0
           fail("Invalid value #{value}. Should be a signed Integer")
@@ -97,6 +103,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_alternatewitnessdirectory) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -109,6 +117,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_alternatewitnessserver) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -121,6 +131,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_autodagautoreseedenabled) do
+    def mof_type; 'boolean' end
+    def mof_is_embedded?; false end
     validate do |value|
     end
     newvalues(true, false)
@@ -134,6 +146,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_autodagdatabasecopiesperdatabase) do
+    def mof_type; 'sint32' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(Numeric) || value.to_i.to_s == value || value.to_i >= 0
           fail("Invalid value #{value}. Should be a signed Integer")
@@ -149,6 +163,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_autodagdatabasecopiespervolume) do
+    def mof_type; 'sint32' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(Numeric) || value.to_i.to_s == value || value.to_i >= 0
           fail("Invalid value #{value}. Should be a signed Integer")
@@ -164,6 +180,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_autodagdatabasesrootfolderpath) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -176,6 +194,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_autodagdiskreclaimerenabled) do
+    def mof_type; 'boolean' end
+    def mof_is_embedded?; false end
     validate do |value|
     end
     newvalues(true, false)
@@ -189,6 +209,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_autodagtotalnumberofdatabases) do
+    def mof_type; 'sint32' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(Numeric) || value.to_i.to_s == value || value.to_i >= 0
           fail("Invalid value #{value}. Should be a signed Integer")
@@ -204,6 +226,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_autodagvolumesrootfolderpath) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -216,6 +240,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_databaseavailabilitygroupipaddresses, :array_matching => :all) do
+    def mof_type; 'string[]' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(Array) || value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string or an array of strings")
@@ -231,6 +257,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       ["Off", "DagOnly"]
   newparam(:dsc_datacenteractivationmode) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -246,6 +274,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_domaincontroller) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -258,6 +288,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_manualdagnetworkconfiguration) do
+    def mof_type; 'boolean' end
+    def mof_is_embedded?; false end
     validate do |value|
     end
     newvalues(true, false)
@@ -271,6 +303,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       ["Disabled", "Enabled", "InterSubnetOnly", "SeedOnly"]
   newparam(:dsc_networkcompression) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -286,6 +320,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       ["Disabled", "Enabled", "InterSubnetOnly", "SeedOnly"]
   newparam(:dsc_networkencryption) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -301,6 +337,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_replaylagmanagerenabled) do
+    def mof_type; 'boolean' end
+    def mof_is_embedded?; false end
     validate do |value|
     end
     newvalues(true, false)
@@ -314,6 +352,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_replicationport) do
+    def mof_type; 'uint16' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless (value.kind_of?(Numeric) && value >= 0) || (value.to_i.to_s == value && value.to_i >= 0)
           fail("Invalid value #{value}. Should be a unsigned Integer")
@@ -329,6 +369,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_skipdagvalidation) do
+    def mof_type; 'boolean' end
+    def mof_is_embedded?; false end
     validate do |value|
     end
     newvalues(true, false)
@@ -342,6 +384,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_witnessdirectory) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -354,6 +398,8 @@ Puppet::Type.newtype(:dsc_xexchdatabaseavailabilitygroup) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_witnessserver) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")

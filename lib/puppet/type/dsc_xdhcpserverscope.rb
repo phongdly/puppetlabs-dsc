@@ -59,6 +59,8 @@ Puppet::Type.newtype(:dsc_xdhcpserverscope) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_ipstartrange) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Starting address to set for this scope"
     isrequired
     validate do |value|
@@ -73,6 +75,8 @@ Puppet::Type.newtype(:dsc_xdhcpserverscope) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_ipendrange) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Ending address to set for this scope"
     isrequired
     validate do |value|
@@ -87,6 +91,8 @@ Puppet::Type.newtype(:dsc_xdhcpserverscope) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_name) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Name of DHCP Scope"
     validate do |value|
       unless value.kind_of?(String)
@@ -100,6 +106,8 @@ Puppet::Type.newtype(:dsc_xdhcpserverscope) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_subnetmask) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Subnet mask for the scope specified in IP address format"
     validate do |value|
       unless value.kind_of?(String)
@@ -113,6 +121,8 @@ Puppet::Type.newtype(:dsc_xdhcpserverscope) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_leaseduration) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Time interval for which an IP address should be leased"
     validate do |value|
       unless value.kind_of?(String)
@@ -126,6 +136,8 @@ Puppet::Type.newtype(:dsc_xdhcpserverscope) do
   # IsMandatory:  False
   # Values:       ["Active", "Inactive"]
   newparam(:dsc_state) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Whether scope should be active or inactive"
     validate do |value|
       unless value.kind_of?(String)
@@ -142,6 +154,8 @@ Puppet::Type.newtype(:dsc_xdhcpserverscope) do
   # IsMandatory:  False
   # Values:       ["IPv4"]
   newparam(:dsc_addressfamily) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Address family type"
     validate do |value|
       unless value.kind_of?(String)
@@ -158,6 +172,8 @@ Puppet::Type.newtype(:dsc_xdhcpserverscope) do
   # IsMandatory:  False
   # Values:       ["Present", "Absent"]
   newparam(:dsc_ensure) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Whether scope should be set or removed"
     validate do |value|
       resource[:ensure] = value.downcase
@@ -175,6 +191,8 @@ Puppet::Type.newtype(:dsc_xdhcpserverscope) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_scopeid) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "ScopeId for the given scope"
     validate do |value|
       unless value.kind_of?(String)

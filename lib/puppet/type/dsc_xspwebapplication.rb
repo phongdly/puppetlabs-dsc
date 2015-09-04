@@ -57,6 +57,8 @@ Puppet::Type.newtype(:dsc_xspwebapplication) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_name) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     isrequired
     validate do |value|
       unless value.kind_of?(String)
@@ -70,6 +72,8 @@ Puppet::Type.newtype(:dsc_xspwebapplication) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_applicationpool) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -82,6 +86,8 @@ Puppet::Type.newtype(:dsc_xspwebapplication) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_applicationpoolaccount) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -94,6 +100,8 @@ Puppet::Type.newtype(:dsc_xspwebapplication) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_url) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -106,6 +114,8 @@ Puppet::Type.newtype(:dsc_xspwebapplication) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_allowanonymous) do
+    def mof_type; 'boolean' end
+    def mof_is_embedded?; false end
     validate do |value|
     end
     newvalues(true, false)
@@ -119,6 +129,8 @@ Puppet::Type.newtype(:dsc_xspwebapplication) do
   # IsMandatory:  False
   # Values:       ["NTLM", "Kerberos"]
   newparam(:dsc_authenticationmethod) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -134,6 +146,8 @@ Puppet::Type.newtype(:dsc_xspwebapplication) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_databasename) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -146,6 +160,8 @@ Puppet::Type.newtype(:dsc_xspwebapplication) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_databaseserver) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -158,6 +174,8 @@ Puppet::Type.newtype(:dsc_xspwebapplication) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_hostheader) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -170,6 +188,8 @@ Puppet::Type.newtype(:dsc_xspwebapplication) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_path) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -182,6 +202,8 @@ Puppet::Type.newtype(:dsc_xspwebapplication) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_port) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -194,6 +216,8 @@ Puppet::Type.newtype(:dsc_xspwebapplication) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_installaccount) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; true end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")

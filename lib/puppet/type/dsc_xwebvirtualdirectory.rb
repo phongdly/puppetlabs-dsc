@@ -60,6 +60,8 @@ Puppet::Type.newtype(:dsc_xwebvirtualdirectory) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_website) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Name of website with which Web Application is associated"
     isrequired
     validate do |value|
@@ -74,6 +76,8 @@ Puppet::Type.newtype(:dsc_xwebvirtualdirectory) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_webapplication) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Web application name for the virtual directory"
     isrequired
     validate do |value|
@@ -88,6 +92,8 @@ Puppet::Type.newtype(:dsc_xwebvirtualdirectory) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_name) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Name of virtual directory"
     isrequired
     validate do |value|
@@ -102,6 +108,8 @@ Puppet::Type.newtype(:dsc_xwebvirtualdirectory) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_physicalpath) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Physical path for the virtual directory"
     validate do |value|
       unless value.kind_of?(String)
@@ -115,6 +123,8 @@ Puppet::Type.newtype(:dsc_xwebvirtualdirectory) do
   # IsMandatory:  False
   # Values:       ["Present", "Absent"]
   newparam(:dsc_ensure) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     desc "Whether virtual directory should be present or absent"
     validate do |value|
       resource[:ensure] = value.downcase

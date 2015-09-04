@@ -57,6 +57,8 @@ Puppet::Type.newtype(:dsc_xspsecurestoreserviceapp) do
   # IsMandatory:  True
   # Values:       None
   newparam(:dsc_name) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     isrequired
     validate do |value|
       unless value.kind_of?(String)
@@ -70,6 +72,8 @@ Puppet::Type.newtype(:dsc_xspsecurestoreserviceapp) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_applicationpool) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -82,6 +86,8 @@ Puppet::Type.newtype(:dsc_xspsecurestoreserviceapp) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_auditingenabled) do
+    def mof_type; 'boolean' end
+    def mof_is_embedded?; false end
     validate do |value|
     end
     newvalues(true, false)
@@ -95,6 +101,8 @@ Puppet::Type.newtype(:dsc_xspsecurestoreserviceapp) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_auditlogmaxsize) do
+    def mof_type; 'uint32' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless (value.kind_of?(Numeric) && value >= 0) || (value.to_i.to_s == value && value.to_i >= 0)
           fail("Invalid value #{value}. Should be a unsigned Integer")
@@ -110,6 +118,8 @@ Puppet::Type.newtype(:dsc_xspsecurestoreserviceapp) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_databasecredentials) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; true end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -122,6 +132,8 @@ Puppet::Type.newtype(:dsc_xspsecurestoreserviceapp) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_databasename) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -134,6 +146,8 @@ Puppet::Type.newtype(:dsc_xspsecurestoreserviceapp) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_databasepassword) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -146,6 +160,8 @@ Puppet::Type.newtype(:dsc_xspsecurestoreserviceapp) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_databaseserver) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -158,6 +174,8 @@ Puppet::Type.newtype(:dsc_xspsecurestoreserviceapp) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_databaseusername) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -170,6 +188,8 @@ Puppet::Type.newtype(:dsc_xspsecurestoreserviceapp) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_failoverdatabaseserver) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; false end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
@@ -182,6 +202,8 @@ Puppet::Type.newtype(:dsc_xspsecurestoreserviceapp) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_partitionmode) do
+    def mof_type; 'boolean' end
+    def mof_is_embedded?; false end
     validate do |value|
     end
     newvalues(true, false)
@@ -195,6 +217,8 @@ Puppet::Type.newtype(:dsc_xspsecurestoreserviceapp) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_sharing) do
+    def mof_type; 'boolean' end
+    def mof_is_embedded?; false end
     validate do |value|
     end
     newvalues(true, false)
@@ -208,6 +232,8 @@ Puppet::Type.newtype(:dsc_xspsecurestoreserviceapp) do
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_installaccount) do
+    def mof_type; 'string' end
+    def mof_is_embedded?; true end
     validate do |value|
       unless value.kind_of?(String)
         fail("Invalid value '#{value}'. Should be a string")
