@@ -94,6 +94,7 @@ Puppet::Type.newtype(:dsc_xsqlserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("SetupCredential", value)
     end
   end
 
@@ -275,6 +276,7 @@ Puppet::Type.newtype(:dsc_xsqlserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("SQLSvcAccount", value)
     end
   end
 
@@ -305,6 +307,7 @@ Puppet::Type.newtype(:dsc_xsqlserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("AgtSvcAccount", value)
     end
   end
 
@@ -383,6 +386,7 @@ Puppet::Type.newtype(:dsc_xsqlserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("SAPwd", value)
     end
   end
 
@@ -488,6 +492,7 @@ Puppet::Type.newtype(:dsc_xsqlserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("FTSvcAccount", value)
     end
   end
 
@@ -518,6 +523,7 @@ Puppet::Type.newtype(:dsc_xsqlserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("RSSvcAccount", value)
     end
   end
 
@@ -548,6 +554,7 @@ Puppet::Type.newtype(:dsc_xsqlserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("ASSvcAccount", value)
     end
   end
 
@@ -686,6 +693,7 @@ Puppet::Type.newtype(:dsc_xsqlserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("ISSvcAccount", value)
     end
   end
 

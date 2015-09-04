@@ -191,6 +191,7 @@ Puppet::Type.newtype(:dsc_xblautobitlocker) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("Password", value)
     end
   end
 
@@ -220,6 +221,7 @@ Puppet::Type.newtype(:dsc_xblautobitlocker) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("Pin", value)
     end
   end
 

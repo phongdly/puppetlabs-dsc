@@ -78,6 +78,7 @@ Puppet::Type.newtype(:dsc_xwaitforaddomain) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("DomainUserCredential", value)
     end
   end
 

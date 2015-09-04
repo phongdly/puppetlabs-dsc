@@ -117,6 +117,7 @@ Puppet::Type.newtype(:dsc_xscvmmadmin) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("SCVMMAdminCredential", value)
     end
   end
 

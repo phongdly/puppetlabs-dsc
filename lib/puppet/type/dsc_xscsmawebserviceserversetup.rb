@@ -115,6 +115,7 @@ Puppet::Type.newtype(:dsc_xscsmawebserviceserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("SetupCredential", value)
     end
   end
 
@@ -146,6 +147,7 @@ Puppet::Type.newtype(:dsc_xscsmawebserviceserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("ApPool", value)
     end
   end
 

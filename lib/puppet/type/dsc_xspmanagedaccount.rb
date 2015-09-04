@@ -78,6 +78,7 @@ Puppet::Type.newtype(:dsc_xspmanagedaccount) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("Account", value)
     end
   end
 
@@ -92,6 +93,7 @@ Puppet::Type.newtype(:dsc_xspmanagedaccount) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("InstallAccount", value)
     end
   end
 

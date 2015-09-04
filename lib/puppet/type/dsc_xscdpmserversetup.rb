@@ -115,6 +115,7 @@ Puppet::Type.newtype(:dsc_xscdpmserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("SetupCredential", value)
     end
   end
 
@@ -220,6 +221,7 @@ Puppet::Type.newtype(:dsc_xscdpmserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("YukonMachineCredential", value)
     end
   end
 
@@ -265,6 +267,7 @@ Puppet::Type.newtype(:dsc_xscdpmserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("ReportingMachineCredential", value)
     end
   end
 

@@ -133,6 +133,7 @@ Puppet::Type.newtype(:dsc_xazurepacksetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("SetupCredential", value)
     end
   end
 
@@ -148,6 +149,7 @@ Puppet::Type.newtype(:dsc_xazurepacksetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("Passphrase", value)
     end
   end
 
@@ -193,6 +195,7 @@ Puppet::Type.newtype(:dsc_xazurepacksetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("dbUser", value)
     end
   end
 

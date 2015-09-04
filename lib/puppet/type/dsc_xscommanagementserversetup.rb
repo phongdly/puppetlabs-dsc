@@ -115,6 +115,7 @@ Puppet::Type.newtype(:dsc_xscommanagementserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("SetupCredential", value)
     end
   end
 
@@ -209,6 +210,7 @@ Puppet::Type.newtype(:dsc_xscommanagementserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("ActionAccount", value)
     end
   end
 
@@ -239,6 +241,7 @@ Puppet::Type.newtype(:dsc_xscommanagementserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("DASAccount", value)
     end
   end
 
@@ -269,6 +272,7 @@ Puppet::Type.newtype(:dsc_xscommanagementserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("DataReader", value)
     end
   end
 
@@ -299,6 +303,7 @@ Puppet::Type.newtype(:dsc_xscommanagementserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("DataWriter", value)
     end
   end
 

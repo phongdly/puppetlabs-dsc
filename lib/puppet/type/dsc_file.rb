@@ -185,6 +185,7 @@ Puppet::Type.newtype(:dsc_file) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("Credential", value)
     end
   end
 
@@ -258,6 +259,7 @@ Puppet::Type.newtype(:dsc_file) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("PsDscRunAsCredential", value)
     end
   end
 

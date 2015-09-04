@@ -113,6 +113,7 @@ Puppet::Type.newtype(:dsc_xazurepackupdate) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("SetupCredential", value)
     end
   end
 

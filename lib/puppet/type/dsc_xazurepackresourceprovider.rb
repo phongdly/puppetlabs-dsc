@@ -110,6 +110,7 @@ Puppet::Type.newtype(:dsc_xazurepackresourceprovider) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("AzurePackAdminCredential", value)
     end
   end
 
@@ -237,6 +238,7 @@ Puppet::Type.newtype(:dsc_xazurepackresourceprovider) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("AdminAuthenticationUser", value)
     end
   end
 
@@ -300,6 +302,7 @@ Puppet::Type.newtype(:dsc_xazurepackresourceprovider) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("TenantAuthenticationUser", value)
     end
   end
 
@@ -393,6 +396,7 @@ Puppet::Type.newtype(:dsc_xazurepackresourceprovider) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("UsageAuthenticationUser", value)
     end
   end
 
@@ -456,6 +460,7 @@ Puppet::Type.newtype(:dsc_xazurepackresourceprovider) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("HealthCheckAuthenticationUser", value)
     end
   end
 
@@ -519,6 +524,7 @@ Puppet::Type.newtype(:dsc_xazurepackresourceprovider) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("NotificationAuthenticationUser", value)
     end
   end
 

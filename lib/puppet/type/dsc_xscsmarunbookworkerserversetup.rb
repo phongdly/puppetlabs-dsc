@@ -115,6 +115,7 @@ Puppet::Type.newtype(:dsc_xscsmarunbookworkerserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("SetupCredential", value)
     end
   end
 
@@ -130,6 +131,7 @@ Puppet::Type.newtype(:dsc_xscsmarunbookworkerserversetup) do
       unless value.kind_of?(Hash)
         fail("Invalid value '#{value}'. Should be a hash")
       end
+      provider.validate_MSFT_Credential("Service", value)
     end
   end
 
