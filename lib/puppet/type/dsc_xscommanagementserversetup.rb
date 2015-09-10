@@ -104,16 +104,16 @@ Puppet::Type.newtype(:dsc_xscommanagementserversetup) do
   end
 
   # Name:         SetupCredential
-  # Type:         string
+  # Type:         MSFT_Credential
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_setupcredential) do
-    def mof_type; 'string' end
+    def mof_type; 'MSFT_Credential' end
     def mof_is_embedded?; true end
     desc "Credential to be used to perform the installation."
     validate do |value|
-      unless value.kind_of?(String)
-        fail("Invalid value '#{value}'. Should be a string")
+      unless value.kind_of?(Hash)
+        fail("Invalid value '#{value}'. Should be a hash")
       end
     end
   end
@@ -198,16 +198,16 @@ Puppet::Type.newtype(:dsc_xscommanagementserversetup) do
   end
 
   # Name:         ActionAccount
-  # Type:         string
+  # Type:         MSFT_Credential
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_actionaccount) do
-    def mof_type; 'string' end
+    def mof_type; 'MSFT_Credential' end
     def mof_is_embedded?; true end
     desc "The domain and user name of the Management server action account."
     validate do |value|
-      unless value.kind_of?(String)
-        fail("Invalid value '#{value}'. Should be a string")
+      unless value.kind_of?(Hash)
+        fail("Invalid value '#{value}'. Should be a hash")
       end
     end
   end
@@ -228,16 +228,16 @@ Puppet::Type.newtype(:dsc_xscommanagementserversetup) do
   end
 
   # Name:         DASAccount
-  # Type:         string
+  # Type:         MSFT_Credential
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_dasaccount) do
-    def mof_type; 'string' end
+    def mof_type; 'MSFT_Credential' end
     def mof_is_embedded?; true end
     desc "The domain and user name of the Data Access service account."
     validate do |value|
-      unless value.kind_of?(String)
-        fail("Invalid value '#{value}'. Should be a string")
+      unless value.kind_of?(Hash)
+        fail("Invalid value '#{value}'. Should be a hash")
       end
     end
   end
@@ -258,16 +258,16 @@ Puppet::Type.newtype(:dsc_xscommanagementserversetup) do
   end
 
   # Name:         DataReader
-  # Type:         string
+  # Type:         MSFT_Credential
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_datareader) do
-    def mof_type; 'string' end
+    def mof_type; 'MSFT_Credential' end
     def mof_is_embedded?; true end
     desc "The domain and user name of the data reader account."
     validate do |value|
-      unless value.kind_of?(String)
-        fail("Invalid value '#{value}'. Should be a string")
+      unless value.kind_of?(Hash)
+        fail("Invalid value '#{value}'. Should be a hash")
       end
     end
   end
@@ -288,16 +288,16 @@ Puppet::Type.newtype(:dsc_xscommanagementserversetup) do
   end
 
   # Name:         DataWriter
-  # Type:         string
+  # Type:         MSFT_Credential
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_datawriter) do
-    def mof_type; 'string' end
+    def mof_type; 'MSFT_Credential' end
     def mof_is_embedded?; true end
     desc "The domain and user name of the data Writer account."
     validate do |value|
-      unless value.kind_of?(String)
-        fail("Invalid value '#{value}'. Should be a string")
+      unless value.kind_of?(Hash)
+        fail("Invalid value '#{value}'. Should be a hash")
       end
     end
   end

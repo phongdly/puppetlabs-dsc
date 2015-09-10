@@ -104,16 +104,16 @@ Puppet::Type.newtype(:dsc_xscspfserversetup) do
   end
 
   # Name:         SetupCredential
-  # Type:         string
+  # Type:         MSFT_Credential
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_setupcredential) do
-    def mof_type; 'string' end
+    def mof_type; 'MSFT_Credential' end
     def mof_is_embedded?; true end
     desc "Credential to be used to perform the installation."
     validate do |value|
-      unless value.kind_of?(String)
-        fail("Invalid value '#{value}'. Should be a string")
+      unless value.kind_of?(Hash)
+        fail("Invalid value '#{value}'. Should be a hash")
       end
     end
   end
@@ -246,16 +246,16 @@ Puppet::Type.newtype(:dsc_xscspfserversetup) do
   end
 
   # Name:         SCVMM
-  # Type:         string
+  # Type:         MSFT_Credential
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_scvmm) do
-    def mof_type; 'string' end
+    def mof_type; 'MSFT_Credential' end
     def mof_is_embedded?; true end
     desc "Credential for the VMM application pool."
     validate do |value|
-      unless value.kind_of?(String)
-        fail("Invalid value '#{value}'. Should be a string")
+      unless value.kind_of?(Hash)
+        fail("Invalid value '#{value}'. Should be a hash")
       end
     end
   end
@@ -276,16 +276,16 @@ Puppet::Type.newtype(:dsc_xscspfserversetup) do
   end
 
   # Name:         SCAdmin
-  # Type:         string
+  # Type:         MSFT_Credential
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_scadmin) do
-    def mof_type; 'string' end
+    def mof_type; 'MSFT_Credential' end
     def mof_is_embedded?; true end
     desc "Credential for the Admin application pool"
     validate do |value|
-      unless value.kind_of?(String)
-        fail("Invalid value '#{value}'. Should be a string")
+      unless value.kind_of?(Hash)
+        fail("Invalid value '#{value}'. Should be a hash")
       end
     end
   end
@@ -306,16 +306,16 @@ Puppet::Type.newtype(:dsc_xscspfserversetup) do
   end
 
   # Name:         SCProvider
-  # Type:         string
+  # Type:         MSFT_Credential
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_scprovider) do
-    def mof_type; 'string' end
+    def mof_type; 'MSFT_Credential' end
     def mof_is_embedded?; true end
     desc "Credential for the Provider application pool"
     validate do |value|
-      unless value.kind_of?(String)
-        fail("Invalid value '#{value}'. Should be a string")
+      unless value.kind_of?(Hash)
+        fail("Invalid value '#{value}'. Should be a hash")
       end
     end
   end
@@ -336,16 +336,16 @@ Puppet::Type.newtype(:dsc_xscspfserversetup) do
   end
 
   # Name:         SCUsage
-  # Type:         string
+  # Type:         MSFT_Credential
   # IsMandatory:  False
   # Values:       None
   newparam(:dsc_scusage) do
-    def mof_type; 'string' end
+    def mof_type; 'MSFT_Credential' end
     def mof_is_embedded?; true end
     desc "Credential for the Usage application pool"
     validate do |value|
-      unless value.kind_of?(String)
-        fail("Invalid value '#{value}'. Should be a string")
+      unless value.kind_of?(Hash)
+        fail("Invalid value '#{value}'. Should be a hash")
       end
     end
   end
