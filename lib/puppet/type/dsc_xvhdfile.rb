@@ -5,7 +5,7 @@ Puppet::Type.newtype(:dsc_xvhdfile) do
 
   provide :powershell, :parent => Puppet::Type.type(:base_dsc).provider(:powershell) do
     defaultfor :operatingsystem => :windows
-    def validate_MSFT_xFileDirectory(name, value)
+    def validate_MSFT_xFileDirectory(mof_type_map, name, value)
       required = ['destinationpath']
       allowed = ['sourcepath','ensure','type','recurse','force','content','attributes']
       lowkey_hash = Hash[value.map { |k, v| [k.to_s.downcase, v] }]
@@ -18,6 +18,12 @@ Puppet::Type.newtype(:dsc_xvhdfile) do
       extraneous = lowkey_hash.keys - required - allowed
       unless extraneous.empty?
         fail "#{name} includes invalid keys: #{extraneous.join(',')}"
+      end
+
+      lowkey_hash.keys.each do |key|
+        if lowkey_hash[key]
+          validate_mof_type(mof_type_map[key], 'MSFT_xFileDirectory', key, lowkey_hash[key])
+        end
       end
     end
   end
@@ -100,7 +106,7 @@ Puppet::Type.newtype(:dsc_xvhdfile) do
       end
       (value.kind_of?(Hash) ? [value] : value).each_with_index do |v, i|
         fail "FileDirectory value at index #{i} should be a Hash" unless v.is_a? Hash
-        provider.validate_MSFT_xFileDirectory("FileDirectory", v)
+        provider.validate_MSFT_xFileDirectory(mof_type_map, "FileDirectory", v)
       end
     end
     munge do |value|
